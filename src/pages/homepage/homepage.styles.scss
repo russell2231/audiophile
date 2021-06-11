@@ -1,0 +1,76 @@
+@import "../../design-tokens/variables";
+
+.navbar {
+	background-color: #1a1a1a;
+}
+
+.homepage {
+	margin: 0;
+	padding: 0;
+
+	.hero {
+		background: url(../../assets/home/mobile/image-header.jpg) no-repeat bottom /
+			cover;
+		height: 510px;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		text-align: center;
+
+		@include respond-to(small) {
+			background: url(../../assets/home/tablet/image-header.jpg) no-repeat
+				bottom/cover;
+			height: 639px;
+		}
+		@include respond-to(medium) {
+			background: url(../../assets/home/desktop/image-hero.jpg) no-repeat
+				bottom/cover;
+			justify-content: flex-start;
+			text-align: left;
+		}
+
+		.content {
+			width: 328px;
+			margin: 0 auto;
+
+			@include respond-to(small) {
+				width: 370px;
+			}
+			@include respond-to(medium) {
+				margin: 0;
+			}
+		}
+
+		.new-product {
+			font-size: 1.4rem;
+			letter-spacing: 10px;
+			text-transform: uppercase;
+			color: #fff;
+			opacity: 0.5;
+		}
+
+		.title {
+			margin: 1.4rem 0 2.7rem;
+			font-size: 3.6rem;
+			letter-spacing: 1.29px;
+			line-height: 1.1;
+			color: #fff;
+
+			@include respond-to(small) {
+				font-size: 5.6rem;
+				margin: 2rem 0 2.9rem;
+			}
+		}
+
+		.tagline {
+			margin: 0;
+			color: #fff;
+			opacity: 0.75;
+			margin-bottom: 3rem;
+
+			@include respond-to(small) {
+				margin-bottom: 4rem;
+			}
+		}
+	}
+}
