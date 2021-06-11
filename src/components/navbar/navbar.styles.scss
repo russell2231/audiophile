@@ -1,0 +1,54 @@
+@import "../../design-tokens/variables";
+
+.navbar {
+	color: white;
+	background-color: black;
+	padding: 3.2rem 0;
+	border-bottom: 1px solid rgba(#fff, 0.1);
+
+	.container {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+
+		.nav-toggler {
+			@include respond-to(medium) {
+				display: none;
+			}
+		}
+
+		.logo {
+			text-decoration: none;
+			font-size: 0;
+
+			@include respond-to(small) {
+				width: 80%;
+			}
+			@include respond-to(medium) {
+				width: auto;
+			}
+		}
+
+		.nav-list {
+			display: none;
+			justify-content: space-between;
+			width: 429px;
+
+			.nav-item a {
+				font-size: 1.3rem;
+				font-weight: bold;
+				letter-spacing: 2px;
+				color: #fff;
+				text-decoration: none;
+
+				&:hover {
+					color: $palette-raw-sienna;
+				}
+			}
+
+			@include respond-to(medium) {
+				display: flex;
+			}
+		}
+	}
+}
