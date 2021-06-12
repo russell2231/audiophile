@@ -1,5 +1,5 @@
 import CustomButton from "../../components/custom-button/custom-button.component";
-
+import NavbarSecondary from "../../components/navbar-secondary/navbar-secondary.component";
 import "./homepage.styles.scss";
 
 const HomePage = () => {
@@ -18,6 +18,8 @@ const HomePage = () => {
 					</article>
 				</div>
 			</section>
+
+			<NavbarSecondary />
 		</main>
 	);
 };
