@@ -1,8 +1,13 @@
 import "./custom-button.styles.scss";
 
-const CustomButton = ({ children, ...otherProps }) => {
+const CustomButton = ({ children, invert, secondary, ...otherProps }) => {
 	return (
-		<button className="custom-button" {...otherProps}>
+		<button
+			className={`${secondary ? "secondary" : ""} ${
+				invert ? "invert" : ""
+			} custom-button`}
+			{...otherProps}
+		>
 			{children}
 		</button>
 	);

@@ -84,4 +84,173 @@
 			padding: 12rem 0 16rem;
 		}
 	}
+
+	.featured-items {
+		display: grid;
+		grid-template-columns: 1fr;
+		row-gap: 2.4rem;
+
+		@include respond-to(small) {
+			row-gap: 3.2rem;
+		}
+		@include respond-to(medium) {
+			row-gap: 4.8rem;
+		}
+
+		.main-featured-item {
+			background: url(../../assets/home/desktop/pattern-circles.svg) no-repeat,
+				$palette-raw-sienna;
+			background-position-y: -135px;
+			background-position-x: 50%;
+			background-size: cover;
+			border-radius: 8px;
+			padding: 5.5rem 0;
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
+			overflow: hidden;
+
+			@include respond-to(small) {
+				background-size: auto;
+				background-position-y: -260px;
+			}
+			@include respond-to(medium) {
+				flex-direction: row;
+				align-items: stretch;
+				padding: 12rem 9.5rem 0 12rem;
+				background-position: -160px 0%;
+			}
+
+			picture {
+				text-align: center;
+				img {
+					width: 60%;
+
+					@include respond-to(medium) {
+						width: 70%;
+						display: block;
+						margin-bottom: -20px;
+					}
+				}
+			}
+
+			.content {
+				width: 85%;
+				text-align: center;
+				color: #fff;
+
+				@include respond-to(small) {
+					width: 50%;
+				}
+				@include respond-to(medium) {
+					text-align: left;
+				}
+
+				.title {
+					margin: 2.8rem 0;
+					font-size: 3.6rem;
+					letter-spacing: 1.29px;
+					line-height: 1.1;
+					padding: 0 2rem;
+
+					@include respond-to(small) {
+						font-size: 5.6rem;
+						letter-spacing: 2px;
+						margin: 5.8rem 0 2.8rem;
+					}
+					@include respond-to(medium) {
+						padding: 0;
+						margin-top: 0;
+					}
+				}
+
+				.tagline {
+					margin: 0 0 2.5rem;
+					opacity: 0.75;
+
+					@include respond-to(small) {
+						margin-bottom: 4.1rem;
+					}
+				}
+			}
+		}
+
+		.secondary-featured-item {
+			background: url(../../assets/home/mobile/image-speaker-zx7.jpg) no-repeat
+				right/ cover;
+			width: 100%;
+			border-radius: 8px;
+			height: 320px;
+			padding-left: 2.4rem;
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			align-items: flex-start;
+
+			@include respond-to(small) {
+				background: url(../../assets/home/tablet/image-speaker-zx7.jpg)
+					no-repeat right/ cover;
+				padding-left: 6.2rem;
+			}
+			@include respond-to(large) {
+				background: url(../../assets/home/desktop/image-speaker-zx7.jpg)
+					no-repeat right/ cover;
+				padding-left: 9.5rem;
+			}
+
+			.title {
+				font-size: 2.8rem;
+				letter-spacing: 2px;
+				margin: 0 0 3.4rem;
+			}
+		}
+
+		.tertiary-featured-item {
+			display: grid;
+			grid-template-columns: 1fr;
+			row-gap: 2.4rem;
+
+			@include respond-to(small) {
+				grid-template-columns: 1fr 1fr;
+				column-gap: 1.1rem;
+			}
+			@include respond-to(medium) {
+				column-gap: 3rem;
+			}
+
+			.image-container {
+				img {
+					border-radius: 8px;
+					width: 100%;
+					display: block;
+				}
+			}
+
+			.content {
+				background-color: #f1f1f1;
+				padding: 4rem 2.4rem;
+				border-radius: 8px;
+
+				@include respond-to(small) {
+					display: flex;
+					flex-direction: column;
+					align-items: flex-start;
+					justify-content: center;
+					padding: 0;
+					padding-left: 4.1rem;
+				}
+				@include respond-to(medium) {
+					padding-left: 9.5rem;
+				}
+
+				.title {
+					margin-top: 0;
+					margin-bottom: 3.4rem;
+					font-size: 2.8rem;
+					letter-spacing: 2px;
+				}
+			}
+		}
+	}
 }
