@@ -89,12 +89,15 @@
 		display: grid;
 		grid-template-columns: 1fr;
 		row-gap: 2.4rem;
+		padding-bottom: 12rem;
 
 		@include respond-to(small) {
 			row-gap: 3.2rem;
+			padding-bottom: 9.6rem;
 		}
 		@include respond-to(medium) {
 			row-gap: 4.8rem;
+			padding-bottom: 20rem;
 		}
 
 		.main-featured-item {

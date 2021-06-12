@@ -1,5 +1,7 @@
 import CustomButton from "../../components/custom-button/custom-button.component";
 import NavbarSecondary from "../../components/navbar-secondary/navbar-secondary.component";
+import Showcase from "../../components/showcase/showcase.component";
+
 import "./homepage.styles.scss";
 
 const HomePage = () => {
@@ -96,6 +98,8 @@ const HomePage = () => {
 					</div>
 				</div>
 			</section>
+
+			<Showcase />
 		</main>
 	);
 };
