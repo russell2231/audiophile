@@ -4,10 +4,15 @@
 	display: flex;
 	flex-direction: column;
 	align-items: center;
+	padding-bottom: 12rem;
 
+	@include respond-to(small) {
+		padding-bottom: 9.6rem;
+	}
 	@include respond-to(medium) {
 		flex-direction: row-reverse;
 		justify-content: space-between;
+		padding-bottom: 20rem;
 	}
 
 	picture {

@@ -1,0 +1,164 @@
+@import "../../design-tokens/variables";
+
+.footer {
+	background-color: #000;
+	padding-bottom: 4rem;
+	color: #fff;
+
+	@include respond-to(small) {
+		padding-bottom: 4.8rem;
+	}
+
+	.content {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		text-align: center;
+
+		@include respond-to(small) {
+			flex-direction: row;
+			text-align: left;
+			flex-wrap: wrap;
+			align-items: stretch;
+			justify-content: space-between;
+		}
+
+		.logo {
+			display: block;
+			padding-top: 4.8rem;
+			position: relative;
+
+			@include respond-to(small) {
+				padding-top: 5.6rem;
+				width: 100%;
+			}
+			@include respond-to(medium) {
+				padding-top: 7rem;
+				width: 143px;
+				order: 1;
+			}
+
+			&::after {
+				content: "";
+				background: $palette-raw-sienna;
+				width: 101px;
+				height: 4px;
+				position: absolute;
+				top: 0;
+				left: 50%;
+				transform: translate(-50%);
+
+				@include respond-to(small) {
+					left: 0;
+					transform: none;
+				}
+			}
+		}
+
+		.nav {
+			padding: 4.8rem 0;
+
+			@include respond-to(small) {
+				padding: 3.2rem 0;
+			}
+			@include respond-to(medium) {
+				align-self: flex-end;
+				padding: 0;
+				order: 2;
+			}
+
+			.nav-list {
+				margin: 0;
+				padding: 0;
+				text-align: center;
+				list-style-type: none;
+
+				@include respond-to(small) {
+					display: flex;
+					justify-content: space-between;
+					width: 429px;
+				}
+
+				.nav-item {
+					text-transform: uppercase;
+					font-size: 1.3rem;
+					letter-spacing: 2px;
+					font-weight: bold;
+					margin-bottom: 1.6rem;
+
+					@include respond-to(small) {
+						margin-bottom: 0;
+					}
+
+					&:nth-last-of-type() {
+						margin-bottom: 0;
+					}
+
+					a {
+						color: #fff;
+						text-decoration: none;
+
+						&:hover {
+							color: $palette-raw-sienna;
+						}
+					}
+				}
+			}
+		}
+
+		.tagline {
+			margin-top: 0;
+			opacity: 0.5;
+			font-weight: 500;
+			margin-bottom: 4.8rem;
+
+			@include respond-to(small) {
+				margin-bottom: 8rem;
+				width: 100%;
+			}
+			@include respond-to(medium) {
+				width: 540px;
+				margin-bottom: 0;
+				margin-top: 3.6rem;
+				order: 3;
+			}
+		}
+
+		.copyright {
+			margin-top: 0;
+			font-weight: 500;
+			opacity: 0.5;
+			margin-bottom: 4.8rem;
+
+			@include respond-to(small) {
+				margin-bottom: 0;
+			}
+			@include respond-to(medium) {
+				order: 5;
+				width: 100%;
+				margin-top: 5.6rem;
+			}
+		}
+
+		.socials {
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+			width: 104px;
+
+			@include respond-to(medium) {
+				order: 4;
+				align-self: flex-end;
+				margin-top: 3.6rem;
+			}
+
+			svg {
+				cursor: pointer;
+
+				&:hover path {
+					fill: $palette-raw-sienna;
+				}
+			}
+		}
+	}
+}
