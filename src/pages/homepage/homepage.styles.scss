@@ -1,9 +1,5 @@
 @import "../../design-tokens/variables";
 
-.navbar {
-	background-color: #1a1a1a;
-}
-
 .homepage {
 	margin: 0;
 	padding: 0;
@@ -254,6 +250,17 @@
 					letter-spacing: 2px;
 				}
 			}
+		}
+	}
+
+	.showcase {
+		padding-bottom: 12rem;
+
+		@include respond-to(small) {
+			padding-bottom: 9.6rem;
+		}
+		@include respond-to(medium) {
+			padding-bottom: 20rem;
 		}
 	}
 }

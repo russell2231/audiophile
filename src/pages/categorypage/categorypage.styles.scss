@@ -1,0 +1,42 @@
+@import "../../design-tokens/variables";
+
+.category-page {
+	.hero {
+		background-color: #000;
+		color: #fff;
+		height: 100px;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+
+		@include respond-to(small) {
+			height: 245px;
+		}
+
+		.title {
+			margin: 0;
+			text-transform: uppercase;
+			font-size: 2.8rem;
+			letter-spacing: 2px;
+
+			@include respond-to(small) {
+				font-size: 4rem;
+				letter-spacing: 1.43px;
+			}
+		}
+	}
+
+	.navbar-secondary {
+		@include respond-to(medium) {
+			padding-top: 4rem;
+		}
+	}
+
+	.showcase {
+		padding: 12rem 0;
+
+		@include respond-to(medium) {
+			padding: 16rem 0;
+		}
+	}
+}
