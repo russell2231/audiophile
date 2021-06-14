@@ -1,0 +1,22 @@
+@import "../../design-tokens/_variables.scss";
+
+.product-page {
+	padding-top: 2rem;
+
+	@include respond-to(small) {
+		padding-top: 3.2rem;
+	}
+	@include respond-to(medium) {
+		padding-top: 8rem;
+	}
+
+	.showcase {
+		margin-top: 12rem;
+		margin-bottom: 12rem;
+
+		@include respond-to(medium) {
+			margin-top: 16rem;
+			margin-bottom: 16rem;
+		}
+	}
+}

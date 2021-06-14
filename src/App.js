@@ -5,6 +5,7 @@ import ProductsContext from "./context/products/products.context";
 import Navbar from "./components/navbar/navbar.component";
 import HomePage from "./pages/homepage/homepage.component";
 import CategoryPage from "./pages/categorypage/categorypage.component";
+import ProductPage from "./pages/productpage/productpage.component";
 import Footer from "./components/footer/footer.component";
 
 import PRODUCTS_DATA from "./context/products/products-data";
@@ -19,9 +20,10 @@ function App() {
 			<Navbar />
 			<Switch>
 				<Route exact path="/" component={HomePage} />
-				<Route path="/headphones" component={CategoryPage} />
-				<Route path="/speakers" component={CategoryPage} />
-				<Route path="/earphones" component={CategoryPage} />
+				<Route exact path="/headphones" component={CategoryPage} />
+				<Route exact path="/speakers" component={CategoryPage} />
+				<Route exact path="/earphones" component={CategoryPage} />
+				<Route exact path="/:category/:productSlug" component={ProductPage} />
 			</Switch>
 			<Footer />
 		</ProductsContext.Provider>
