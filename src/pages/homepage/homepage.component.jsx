@@ -31,7 +31,7 @@ const HomePage = () => {
 								require("../../assets/home/desktop/image-speaker-zx9.png")
 									.default
 							}
-							media="(min-width:1024px)"
+							media="(min-width: 1024px)"
 						/>
 						<source
 							srcSet={

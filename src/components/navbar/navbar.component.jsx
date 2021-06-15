@@ -1,4 +1,9 @@
-import { Link } from "react-router-dom";
+import { useState, useEffect } from "react";
+import { Link, useLocation } from "react-router-dom";
+
+import NavbarContext from "../../context/navbar/navbar.context";
+
+import NavbarDropdown from "../navbar-dropdown/navbar-dropdown.component";
 
 import { ReactComponent as Logo } from "../../assets/shared/desktop/logo.svg";
 import { ReactComponent as HamburgerIcon } from "../../assets/shared/tablet/icon-hamburger.svg";
@@ -7,10 +12,22 @@ import { ReactComponent as CartIcon } from "../../assets/shared/desktop/icon-car
 import "./navbar.styles.scss";
 
 const Navbar = () => {
+	const [hidden, setHidden] = useState(true);
+	const toggleHidden = () => setHidden(!hidden);
+	const location = useLocation();
+
+	useEffect(() => {
+		setHidden(true);
+	}, [location]);
+
 	return (
 		<nav className="navbar">
-			<div className="container">
-				<HamburgerIcon className="nav-toggler" />
+			<div className="container nav-container">
+				<HamburgerIcon
+					className={`${!hidden ? "open" : ""} nav-toggler`}
+					onClick={toggleHidden}
+				/>
+
 				<Link className="logo" to="/">
 					<Logo />
 				</Link>
@@ -32,6 +49,19 @@ const Navbar = () => {
 
 				<CartIcon />
 			</div>
+
+			{hidden ? (
+				""
+			) : (
+				<NavbarContext.Provider
+					value={{
+						hidden,
+						toggleHidden,
+					}}
+				>
+					<NavbarDropdown />
+				</NavbarContext.Provider>
+			)}
 		</nav>
 	);
 };
