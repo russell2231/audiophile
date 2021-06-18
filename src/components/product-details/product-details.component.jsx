@@ -1,4 +1,7 @@
+import { useContext, useState } from "react";
 import { useHistory, Link } from "react-router-dom";
+
+import { CartContext } from "../../context/cart/cart.context";
 
 import CustomButton from "../custom-button/custom-button.component";
 
@@ -6,6 +9,21 @@ import "./product-details.styles.scss";
 
 const ProductDetails = ({ product }) => {
 	const history = useHistory();
+	const { addItem, cart } = useContext(CartContext);
+
+	const inCart = cart.find((cartItem) => product.id === cartItem.id);
+
+	const [quantity, setQuantity] = useState(1);
+
+	const increaseQuantity = () => {
+		setQuantity(quantity + 1);
+	};
+	const decreaseQuantity = () => {
+		if (quantity === 1) {
+			return;
+		}
+		setQuantity(quantity - 1);
+	};
 
 	return (
 		<section className="container product-details">
@@ -35,12 +53,32 @@ const ProductDetails = ({ product }) => {
 				<span className="price">$ {product.price.toLocaleString()}</span>
 
 				<div className="shop">
-					<div className="quantity">
-						<button className="decrease">-</button>
-						<span className="amount">1</span>
-						<button className="increase">+</button>
-					</div>
-					<CustomButton>Add to Cart</CustomButton>
+					{inCart && (
+						<CustomButton secondary invert disabled>
+							In Cart
+						</CustomButton>
+					)}
+					{!inCart && (
+						<>
+							<div className="quantity">
+								<button className="decrease" onClick={decreaseQuantity}>
+									-
+								</button>
+								<span className="amount">{quantity}</span>
+								<button className="increase" onClick={increaseQuantity}>
+									+
+								</button>
+							</div>
+							<CustomButton
+								onClick={() => {
+									addItem(product, quantity);
+									setQuantity(1);
+								}}
+							>
+								Add to Cart
+							</CustomButton>
+						</>
+					)}
 				</div>
 			</div>
 
