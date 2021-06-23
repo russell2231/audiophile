@@ -1,9 +1,11 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
 import { Link, useLocation } from "react-router-dom";
 
 import NavbarContext from "../../context/navbar/navbar.context";
+import { CartContext } from "../../context/cart/cart.context";
 
 import NavbarDropdown from "../navbar-dropdown/navbar-dropdown.component";
+import CartDropdown from "../cart-dropdown/cart-dropdown.component";
 
 import { ReactComponent as Logo } from "../../assets/shared/desktop/logo.svg";
 import { ReactComponent as HamburgerIcon } from "../../assets/shared/tablet/icon-hamburger.svg";
@@ -15,6 +17,8 @@ const Navbar = () => {
 	const [hidden, setHidden] = useState(true);
 	const toggleHidden = () => setHidden(!hidden);
 	const location = useLocation();
+
+	const { cartHidden, toggleCart } = useContext(CartContext);
 
 	useEffect(() => {
 		setHidden(true);
@@ -47,7 +51,7 @@ const Navbar = () => {
 					</li>
 				</ul>
 
-				<CartIcon />
+				<CartIcon className="cart-icon" onClick={() => toggleCart()} />
 			</div>
 
 			{hidden ? (
@@ -62,6 +66,7 @@ const Navbar = () => {
 					<NavbarDropdown />
 				</NavbarContext.Provider>
 			)}
+			{!cartHidden ? <CartDropdown /> : ""}
 		</nav>
 	);
 };

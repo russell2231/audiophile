@@ -23,6 +23,7 @@
 		font-weight: 500;
 		margin-bottom: 2.4rem;
 		display: block;
+		cursor: pointer;
 
 		@include respond-to(small) {
 			width: 100%;

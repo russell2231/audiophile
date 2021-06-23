@@ -1,5 +1,5 @@
-import { useState, useReducer } from "react";
-import { Switch, Route } from "react-router-dom";
+import { useState, useEffect } from "react";
+import { Switch, Route, useLocation } from "react-router-dom";
 import ProductsContext from "./context/products/products.context";
 import CartContextProvider from "./context/cart/cart.context";
 
@@ -15,6 +15,11 @@ import "./App.scss";
 
 function App() {
 	const [products] = useState(PRODUCTS_DATA);
+	const { pathname } = useLocation();
+
+	useEffect(() => {
+		window.scrollTo(0, 0);
+	}, [pathname]);
 
 	return (
 		<ProductsContext.Provider value={products}>

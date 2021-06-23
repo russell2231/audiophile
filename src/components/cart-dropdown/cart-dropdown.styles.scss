@@ -1,0 +1,68 @@
+@import "../../design-tokens/variables";
+
+.cart-dropdown-container {
+	position: relative;
+	top: 24px;
+
+	@include respond-to(medium) {
+		top: 32px;
+	}
+}
+
+.cart-dropdown {
+	position: absolute;
+	top: 0;
+	width: 327px;
+	margin: 0 auto;
+	right: 0;
+	background-color: #fff;
+	padding: 3rem;
+	border-radius: 8px;
+	height: 488px;
+	z-index: 1000;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	align-items: center;
+
+	@include respond-to(small) {
+		width: 377px;
+	}
+
+	.title {
+		width: 50%;
+		margin: 0;
+		font-size: 1.8rem;
+		letter-spacing: 1.3px;
+		font-weight: bold;
+	}
+
+	.clear-cart {
+		width: 77px;
+		font-size: 1.5rem;
+		opacity: 0.5;
+		text-decoration: underline;
+		cursor: pointer;
+	}
+
+	.cart {
+		width: 100%;
+		max-height: 240px;
+		overflow-y: scroll;
+	}
+
+	.total {
+		font-size: 1.5rem;
+		opacity: 0.5;
+		font-weight: 500;
+	}
+
+	.total-price {
+		font-size: 1.8rem;
+		font-weight: bold;
+	}
+
+	.custom-button {
+		width: 100%;
+	}
+}

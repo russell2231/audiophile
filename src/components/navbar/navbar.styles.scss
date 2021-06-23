@@ -14,6 +14,10 @@
 		position: relative;
 		z-index: 1000;
 
+		@include respond-to(medium) {
+			padding-bottom: 3.7rem;
+		}
+
 		.nav-toggler {
 			cursor: pointer;
 
@@ -45,6 +49,10 @@
 			justify-content: space-between;
 			width: 429px;
 
+			@include respond-to(medium) {
+				margin: 0;
+			}
+
 			.nav-item a {
 				font-size: 1.3rem;
 				font-weight: bold;
@@ -59,6 +67,14 @@
 
 			@include respond-to(medium) {
 				display: flex;
+			}
+		}
+
+		.cart-icon {
+			cursor: pointer;
+
+			&:hover path {
+				fill: $palette-raw-sienna;
 			}
 		}
 	}
