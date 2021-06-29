@@ -7,6 +7,7 @@ import Navbar from "./components/navbar/navbar.component";
 import HomePage from "./pages/homepage/homepage.component";
 import CategoryPage from "./pages/categorypage/categorypage.component";
 import ProductPage from "./pages/productpage/productpage.component";
+import CheckoutPage from "./pages/checkoutpage/checkoutpage.component";
 import Footer from "./components/footer/footer.component";
 
 import PRODUCTS_DATA from "./context/products/products-data";
@@ -31,6 +32,7 @@ function App() {
 					<Route exact path="/speakers" component={CategoryPage} />
 					<Route exact path="/earphones" component={CategoryPage} />
 					<Route exact path="/:category/:productSlug" component={ProductPage} />
+					<Route path="/checkout" component={CheckoutPage} />
 				</Switch>
 				<Footer />
 			</CartContextProvider>

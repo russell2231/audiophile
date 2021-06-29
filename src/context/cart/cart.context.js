@@ -1,4 +1,4 @@
-import { createContext, useReducer, useEffect } from "react";
+import { createContext, useReducer, useEffect, useRef } from "react";
 import { useLocation } from "react-router-dom";
 
 import cartReducer from "./cart.reducer";
@@ -36,6 +36,16 @@ const CartContextProvider = ({ children }) => {
 		dispatch({ type: "CLEAR_CART" });
 	};
 
+	const usePrevious = (value) => {
+		const ref = useRef();
+		useEffect(() => {
+			ref.current = value;
+		});
+		return ref.current;
+	};
+
+	const prevCart = usePrevious(state.cart);
+
 	useEffect(() => {
 		localStorage.setItem("cart", JSON.stringify(state.cart));
 	}, [state.cart]);
@@ -53,6 +63,7 @@ const CartContextProvider = ({ children }) => {
 		clearCart,
 		increaseItem,
 		removeItem,
+		prevCart,
 	};
 
 	return <CartContext.Provider value={value}>{children}</CartContext.Provider>;

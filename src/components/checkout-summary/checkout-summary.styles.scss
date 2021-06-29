@@ -1,0 +1,75 @@
+@import "../../design-tokens/variables";
+
+.summary {
+	background-color: #fff;
+	padding: 3.2rem 2.4rem;
+	margin-top: 3.2rem;
+	border-radius: 8px;
+
+	@include respond-to(small) {
+		padding: 3.2rem 3rem;
+	}
+	@include respond-to(medium) {
+		margin-top: 0;
+	}
+
+	.summary-title {
+		font-size: 1.8rem;
+		font-weight: bold;
+		letter-spacing: 1.29px;
+		margin-top: 0;
+		margin-bottom: 3.4rem;
+	}
+
+	.cart {
+		margin-bottom: 3rem;
+
+		.cart-item {
+			.item {
+				display: flex;
+				align-items: center;
+
+				.item-content {
+					margin-left: 1.6rem;
+				}
+			}
+
+			.quantity {
+				opacity: 0.5;
+				font-size: 1.5rem;
+				font-weight: bold;
+			}
+		}
+	}
+
+	.total {
+		display: flex;
+		justify-content: space-between;
+		align-items: baseline;
+		margin-bottom: 0.8rem;
+
+		&:last-of-type {
+			margin-top: 2.4rem;
+			margin-bottom: 3.4rem;
+
+			.tagline {
+				color: $palette-raw-sienna;
+			}
+		}
+
+		.title {
+			font-size: 1.5rem;
+			opacity: 0.5;
+			font-weight: 500;
+		}
+
+		.tagline {
+			font-size: 1.8rem;
+			font-weight: bold;
+		}
+	}
+
+	.custom-button {
+		width: 100%;
+	}
+}

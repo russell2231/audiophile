@@ -1,4 +1,5 @@
 import { useContext } from "react";
+import { Link } from "react-router-dom";
 
 import { CartContext } from "../../context/cart/cart.context";
 
@@ -32,7 +33,11 @@ const CartDropdown = () => {
 					</div>
 					<span className="total">TOTAL</span>
 					<span className="total-price">$ {totalPrice.toLocaleString()}</span>
-					{cart.length > 0 && <CustomButton>Checkout</CustomButton>}
+					{cart.length > 0 && (
+						<Link className="custom-button-link" to="/checkout">
+							<CustomButton>Checkout</CustomButton>
+						</Link>
+					)}
 				</div>
 			</div>
 		</>
