@@ -108,6 +108,16 @@ const CheckoutForm = ({ toggleSuccess }) => {
 					handleChange={handleChange}
 				/>
 			</div>
+
+			<div className="form-group">
+				<h3 className="form-group-title">PAYMENT DETAILS</h3>
+
+				<p className="tagline">
+					'Cash on Delivery' enables you to pay in cash when our delivery
+					courier arrives at your residence. Just make sure your address is
+					correct so that your order will not be cancelled.
+				</p>
+			</div>
 		</form>
 	);
 };

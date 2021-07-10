@@ -11,8 +11,8 @@ const CheckoutSummary = () => {
 
 	const totalPrice =
 		cart.reduce((acc, item) => acc + item.price * item.quantity, 0) || 0;
-	const vat = Math.round((totalPrice * 20) / 100);
-	const grandTotal = totalPrice + 50 + vat;
+	const tax = Math.round((totalPrice * 20) / 100);
+	const grandTotal = totalPrice + 50 + tax;
 
 	return (
 		<div className="summary">
@@ -43,8 +43,8 @@ const CheckoutSummary = () => {
 				<span className="tagline">$ 50</span>
 			</div>
 			<div className="total">
-				<span className="title">VAT </span>
-				<span className="tagline">$ {vat.toLocaleString()}</span>
+				<span className="title">TAX</span>
+				<span className="tagline">$ {tax.toLocaleString()}</span>
 			</div>
 			<div className="total">
 				<span className="title">GRAND TOTAL</span>
@@ -52,7 +52,7 @@ const CheckoutSummary = () => {
 			</div>
 
 			<CustomButton type="submit" form="checkoutForm">
-				Continue & Pay
+				Continue
 			</CustomButton>
 		</div>
 	);

@@ -17,5 +17,10 @@
 		border-radius: 8px;
 		border: 1px solid #cfcfcf;
 		padding: 2rem 2.4rem;
+
+		&:focus {
+			outline: none;
+			border: 1px solid $palette-raw-sienna;
+		}
 	}
 }
