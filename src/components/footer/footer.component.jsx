@@ -42,9 +42,13 @@ const Footer = () => {
 				<p className="copyright">Copyright 2021. All Rights Reserved</p>
 
 				<div className="socials">
-					<FacebookIcon />
-					<TwitterIcon />
-					<InstagramIcon />
+					<FacebookIcon
+						onClick={() => window.open("https://www.facebook.com")}
+					/>
+					<TwitterIcon onClick={() => window.open("https://www.twitter.com")} />
+					<InstagramIcon
+						onClick={() => window.open("https://www.instagram.com")}
+					/>
 				</div>
 			</div>
 		</footer>

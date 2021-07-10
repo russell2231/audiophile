@@ -144,7 +144,17 @@ const ProductDetails = ({ product }) => {
 							</picture>
 
 							<h3 className="title">{item.name}</h3>
-							<CustomButton>See Product</CustomButton>
+							<Link
+								to={`${
+									item.slug.includes("headphones")
+										? `/headphones/${item.slug}`
+										: item.slug.includes("speaker")
+										? `/speakers/${item.slug}`
+										: `/earphones/${item.slug}`
+								}`}
+							>
+								<CustomButton>See Product</CustomButton>
+							</Link>
 						</div>
 					))}
 				</div>

@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 import CustomButton from "../../components/custom-button/custom-button.component";
 import NavbarSecondary from "../../components/navbar-secondary/navbar-secondary.component";
 import Showcase from "../../components/showcase/showcase.component";
@@ -16,7 +18,9 @@ const HomePage = () => {
 							Experience natural, lifelike audio and exceptional build quality
 							made for the passionate music enthusiast.
 						</p>
-						<CustomButton>SEE PRODUCT</CustomButton>
+						<Link to="/headphones/xx99-mark-two-headphones">
+							<CustomButton>SEE PRODUCT</CustomButton>
+						</Link>
 					</article>
 				</div>
 			</section>
@@ -55,15 +59,19 @@ const HomePage = () => {
 							Upgrade to premium speakers that are phenomenally built to deliver
 							truly remarkable sound.
 						</p>
-						<CustomButton secondary invert>
-							See Product
-						</CustomButton>
+						<Link to="/speakers/zx9-speaker">
+							<CustomButton secondary invert>
+								See Product
+							</CustomButton>
+						</Link>
 					</div>
 				</div>
 
 				<div className="secondary-featured-item">
 					<h2 className="title">ZX7 SPEAKER</h2>
-					<CustomButton secondary>See Product</CustomButton>
+					<Link to="/speakers/zx7-speaker">
+						<CustomButton secondary>See Product</CustomButton>
+					</Link>
 				</div>
 
 				<div className="tertiary-featured-item">
@@ -94,7 +102,9 @@ const HomePage = () => {
 
 					<div className="content">
 						<h2 className="title">YX1 EARPHONES</h2>
-						<CustomButton secondary>See Product</CustomButton>
+						<Link to="/earphones/yx1-earphones">
+							<CustomButton secondary>See Product</CustomButton>
+						</Link>
 					</div>
 				</div>
 			</section>
