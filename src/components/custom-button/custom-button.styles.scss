@@ -13,16 +13,30 @@
 	color: #fff;
 	border: none;
 	cursor: pointer;
+	transition: 0.3s background-color, color ease;
+
+	&:hover {
+		background-color: $hit-pink;
+	}
 
 	&.secondary {
 		background-color: transparent;
 		border: 1px solid #000;
 		color: #000;
 
+		&:hover {
+			background-color: #000;
+			color: #fff;
+		}
+
 		&.invert {
 			background-color: #000;
 			color: #fff;
 			border: none;
+
+			&:hover {
+				background-color: $tundora;
+			}
 		}
 	}
 }

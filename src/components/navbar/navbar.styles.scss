@@ -59,6 +59,7 @@
 				letter-spacing: 2px;
 				color: #fff;
 				text-decoration: none;
+				transition: 0.3s color ease;
 
 				&:hover {
 					color: $palette-raw-sienna;
@@ -74,6 +75,7 @@
 			cursor: pointer;
 
 			&:hover path {
+				transition: 0.3s fill ease;
 				fill: $palette-raw-sienna;
 			}
 		}
