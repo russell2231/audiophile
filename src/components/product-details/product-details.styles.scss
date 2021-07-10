@@ -19,7 +19,6 @@
 	.go-back {
 		font-size: 1.5rem;
 		line-height: 1.6;
-		opacity: 0.5;
 		font-weight: 500;
 		margin-bottom: 2.4rem;
 		display: block;
@@ -99,15 +98,22 @@
 				justify-content: space-between;
 				width: 120px;
 				background-color: #f1f1f1;
+				font-weight: bold;
+				letter-spacing: 1px;
 
 				button {
 					padding: 0 1.4rem;
 					font-size: 1.3rem;
 					letter-spacing: 1px;
 					border: none;
-					opacity: 0.25;
+					color: rgba(#000, 0.25);
 					background-color: transparent;
 					cursor: pointer;
+					transition: 0.3s color ease;
+
+					&:hover {
+						color: $palette-raw-sienna;
+					}
 				}
 
 				.amount {

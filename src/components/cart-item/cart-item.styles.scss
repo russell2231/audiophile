@@ -43,6 +43,12 @@
 			background-color: transparent;
 			border: none;
 			cursor: pointer;
+			color: rgba(#000, 0.5);
+			transition: 0.3s color ease;
+
+			&:hover {
+				color: $palette-raw-sienna;
+			}
 		}
 
 		.item-amount {

@@ -26,6 +26,7 @@ const CheckoutForm = ({ toggleSuccess }) => {
 		setInputs(INITIAL_STATE);
 		clearCart();
 		toggleSuccess();
+		window.scrollTo(90, 0);
 	};
 
 	const handleChange = (e) => {

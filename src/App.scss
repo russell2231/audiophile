@@ -41,3 +41,12 @@ p {
 	padding: 0;
 	list-style: none;
 }
+
+.go-back {
+	color: rgba(#000, 0.5);
+	transition: 0.3s color ease;
+
+	&:hover {
+		color: $palette-raw-sienna;
+	}
+}
