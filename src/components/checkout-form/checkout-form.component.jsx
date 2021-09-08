@@ -1,32 +1,32 @@
-import { useState, useContext } from "react";
+import { useState, useContext } from 'react';
+import { useHistory } from 'react-router-dom';
 
-import { CartContext } from "../../context/cart/cart.context";
+import { CartContext } from '../../context/cart/cart.context';
 
-import FormInput from "../form-input/form-input.component";
+import FormInput from '../form-input/form-input.component';
 
-import "./checkout-form.styles.scss";
+import './checkout-form.styles.scss';
 
 const INITIAL_STATE = {
-	name: "",
-	email: "",
-	phone: "",
-	address: "",
-	zip: "",
-	city: "",
-	country: "",
+	name: '',
+	email: '',
+	phone: '',
+	address: '',
+	zip: '',
+	city: '',
+	country: '',
 };
 
 const CheckoutForm = ({ toggleSuccess }) => {
 	const { clearCart } = useContext(CartContext);
+	const history = useHistory();
 	const [inputs, setInputs] = useState(INITIAL_STATE);
 
 	const handleSubmit = (e) => {
 		e.preventDefault();
 
 		setInputs(INITIAL_STATE);
-		clearCart();
-		toggleSuccess();
-		window.scrollTo(90, 0);
+		history.push('/checkout/pay');
 	};
 
 	const handleChange = (e) => {
@@ -36,84 +36,84 @@ const CheckoutForm = ({ toggleSuccess }) => {
 	};
 
 	return (
-		<form id="checkoutForm" className="checkout-form" onSubmit={handleSubmit}>
-			<h1 className="title">CHECKOUT</h1>
+		<form id='checkoutForm' className='checkout-form' onSubmit={handleSubmit}>
+			<h1 className='title'>CHECKOUT</h1>
 
-			<div className="form-group">
-				<h3 className="form-group-title">BILLING DETAILS</h3>
+			<div className='form-group'>
+				<h3 className='form-group-title'>BILLING DETAILS</h3>
 				<FormInput
-					name="name"
-					type="text"
-					label="Name"
+					name='name'
+					type='text'
+					label='Name'
 					value={inputs.name}
-					placeholder="Alexi Ward"
+					placeholder='Alexi Ward'
 					required
 					handleChange={handleChange}
 				/>
 				<FormInput
-					name="email"
-					type="email"
-					label="Email Address"
+					name='email'
+					type='email'
+					label='Email Address'
 					value={inputs.email}
-					placeholder="alexei@mail.com"
+					placeholder='alexei@mail.com'
 					required
 					handleChange={handleChange}
 				/>
 				<FormInput
-					name="phone"
-					type="tel"
-					label="Phone Number"
+					name='phone'
+					type='tel'
+					label='Phone Number'
 					value={inputs.phone}
-					placeholder="555-555-5555"
+					placeholder='555-555-5555'
 					required
 					handleChange={handleChange}
 				/>
 			</div>
 
-			<div className="form-group">
-				<h3 className="form-group-title">SHIPPING INFO</h3>
+			<div className='form-group'>
+				<h3 className='form-group-title'>SHIPPING INFO</h3>
 				<FormInput
-					name="address"
-					type="text"
-					label="Address"
+					name='address'
+					type='text'
+					label='Address'
 					value={inputs.address}
-					placeholder="5555 Example Avenue"
+					placeholder='5555 Example Avenue'
 					required
 					handleChange={handleChange}
 				/>
 				<FormInput
-					name="zip"
-					type="number"
-					label="ZIP Code"
+					name='zip'
+					type='number'
+					label='ZIP Code'
 					value={inputs.zip}
-					placeholder="10001"
+					placeholder='10001'
 					required
 					handleChange={handleChange}
 				/>
 				<FormInput
-					name="city"
-					type="text"
-					label="City"
+					name='city'
+					type='text'
+					label='City'
 					value={inputs.city}
-					placeholder="New York"
+					placeholder='New York'
 					required
 					handleChange={handleChange}
 				/>
 				<FormInput
-					name="country"
-					type="text"
-					label="Country"
+					name='country'
+					type='text'
+					label='Country'
 					value={inputs.country}
-					placeholder="United States"
+					placeholder='United States'
 					required
 					handleChange={handleChange}
 				/>
 			</div>
 
-			<div className="form-group">
-				<h3 className="form-group-title">PAYMENT DETAILS</h3>
+			<div className='form-group'>
+				<h3 className='form-group-title'>PAYMENT DETAILS</h3>
 
-				<p className="tagline">
+				<p className='tagline'>
 					'Cash on Delivery' enables you to pay in cash when our delivery
 					courier arrives at your residence. Just make sure your address is
 					correct so that your order will not be cancelled.
