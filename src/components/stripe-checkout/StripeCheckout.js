@@ -15,7 +15,7 @@ import SuccessModal from '../success-modal/success-modal.component';
 
 import './StripeCheckout.scss';
 
-const promise = loadStripe(process.env.REACT_APP_STRIPE_PUBLIC_KEY);
+const promise = loadStripe(`${process.env.REACT_APP_STRIPE_PUBLIC_KEY}`);
 
 const CheckoutForm = () => {
 	const { cart, clearCart } = useContext(CartContext);
