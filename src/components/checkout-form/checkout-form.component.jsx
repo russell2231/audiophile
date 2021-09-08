@@ -1,7 +1,5 @@
-import { useState, useContext } from 'react';
+import { useState } from 'react';
 import { useHistory } from 'react-router-dom';
-
-import { CartContext } from '../../context/cart/cart.context';
 
 import FormInput from '../form-input/form-input.component';
 
@@ -18,7 +16,6 @@ const INITIAL_STATE = {
 };
 
 const CheckoutForm = ({ toggleSuccess }) => {
-	const { clearCart } = useContext(CartContext);
 	const history = useHistory();
 	const [inputs, setInputs] = useState(INITIAL_STATE);
 

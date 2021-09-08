@@ -1,13 +1,13 @@
-import { useEffect, useState, useContext } from "react";
-import { useParams } from "react-router-dom";
+import { useEffect, useState, useContext } from 'react';
+import { useParams } from 'react-router-dom';
 
-import ProductsContext from "../../context/products/products.context";
+import ProductsContext from '../../context/products/products.context';
 
-import ProductDetails from "../../components/product-details/product-details.component";
-import NavbarSecondary from "../../components/navbar-secondary/navbar-secondary.component";
-import Showcase from "../../components/showcase/showcase.component";
+import ProductDetails from '../../components/product-details/product-details.component';
+import NavbarSecondary from '../../components/navbar-secondary/navbar-secondary.component';
+import Showcase from '../../components/showcase/showcase.component';
 
-import "./productpage.styles.scss";
+import './productpage.styles.scss';
 
 const ProductPage = () => {
 	const { productSlug } = useParams();
@@ -20,10 +20,11 @@ const ProductPage = () => {
 			setProduct(product);
 		};
 		getProduct();
+		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, [productSlug]);
 
 	return (
-		<main className="product-page">
+		<main className='product-page'>
 			{product && <ProductDetails product={product} />}
 			<NavbarSecondary />
 			<Showcase />
