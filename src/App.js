@@ -34,7 +34,7 @@ function App() {
 					<Route exact path='/earphones' component={CategoryPage} />
 					<Route exact path='/:category/:productSlug' component={ProductPage} />
 					<Route exact path='/checkout' component={CheckoutPage} />
-					<Route exact path='/checkout/pay' component={StripeCheckoutPage} />
+					<Route path='/pay' component={StripeCheckoutPage} />
 				</Switch>
 				<Footer />
 			</CartContextProvider>

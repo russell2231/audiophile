@@ -23,7 +23,7 @@ const CheckoutForm = ({ toggleSuccess }) => {
 		e.preventDefault();
 
 		setInputs(INITIAL_STATE);
-		history.push('/checkout/pay');
+		history.push('/pay');
 	};
 
 	const handleChange = (e) => {

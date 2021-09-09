@@ -6,7 +6,7 @@ import CustomButton from '../custom-button/custom-button.component';
 
 import './checkout-summary.styles.scss';
 
-const CheckoutSummary = () => {
+const CheckoutSummary = ({ disabled }) => {
 	const { cart } = useContext(CartContext);
 
 	const totalPrice =
@@ -51,9 +51,13 @@ const CheckoutSummary = () => {
 				<span className='tagline'>$ {grandTotal.toLocaleString()}</span>
 			</div>
 
-			<CustomButton type='submit' form='checkoutForm'>
-				Continue & Pay
-			</CustomButton>
+			{disabled ? (
+				''
+			) : (
+				<CustomButton type='submit' form='checkoutForm'>
+					Continue & Pay
+				</CustomButton>
+			)}
 		</div>
 	);
 };

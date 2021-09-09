@@ -89,13 +89,14 @@ const CheckoutForm = () => {
 			setSucceeded(true);
 			setTimeout(() => {
 				clearCart();
+				setSucceeded(false);
 				history.push('/');
 			}, 10000);
 		}
 	};
 
 	return (
-		<div>
+		<div className='stripe-payment-container'>
 			{succeeded ? (
 				<SuccessModal />
 			) : (

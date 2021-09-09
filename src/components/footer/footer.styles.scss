@@ -1,4 +1,4 @@
-@import "../../design-tokens/variables";
+@import '../../design-tokens/variables';
 
 .footer {
 	background-color: #000;
@@ -39,7 +39,7 @@
 			}
 
 			&::after {
-				content: "";
+				content: '';
 				background: $palette-raw-sienna;
 				width: 101px;
 				height: 4px;
