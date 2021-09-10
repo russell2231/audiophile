@@ -8,13 +8,9 @@ exports.handler = async function (event, context) {
 	if (event.body) {
 		const { cart, grandTotal } = JSON.parse(event.body);
 
-		const calculateOrderAmount = () => {
-			return grandTotal;
-		};
-
 		try {
 			const paymentIntent = await stripe.paymentIntents.create({
-				amount: calculateOrderAmount(),
+				amount: grandTotal * 100,
 				currency: 'usd',
 			});
 			return {

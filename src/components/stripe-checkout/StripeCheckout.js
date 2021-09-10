@@ -58,8 +58,11 @@ const CheckoutForm = () => {
 				'/.netlify/functions/create-payment-intent',
 				JSON.stringify({ cart, grandTotal })
 			);
+			console.log(data);
 			setClientSecret(data.clientSecret);
-		} catch (error) {}
+		} catch (error) {
+			console.log(error.response);
+		}
 	};
 
 	useEffect(() => {
@@ -87,10 +90,10 @@ const CheckoutForm = () => {
 		} else {
 			setError(null);
 			setSucceeded(true);
+
 			setTimeout(() => {
-				clearCart();
-				setSucceeded(false);
 				history.push('/');
+				clearCart();
 			}, 10000);
 		}
 	};

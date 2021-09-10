@@ -12,7 +12,7 @@ const INITIAL_STATE = {
 	address: '',
 	zip: '',
 	city: '',
-	country: '',
+	state: '',
 };
 
 const CheckoutForm = ({ toggleSuccess }) => {
@@ -43,7 +43,6 @@ const CheckoutForm = ({ toggleSuccess }) => {
 					type='text'
 					label='Name'
 					value={inputs.name}
-					placeholder='Alexi Ward'
 					required
 					handleChange={handleChange}
 				/>
@@ -52,7 +51,6 @@ const CheckoutForm = ({ toggleSuccess }) => {
 					type='email'
 					label='Email Address'
 					value={inputs.email}
-					placeholder='alexei@mail.com'
 					required
 					handleChange={handleChange}
 				/>
@@ -61,7 +59,6 @@ const CheckoutForm = ({ toggleSuccess }) => {
 					type='tel'
 					label='Phone Number'
 					value={inputs.phone}
-					placeholder='555-555-5555'
 					required
 					handleChange={handleChange}
 				/>
@@ -74,7 +71,6 @@ const CheckoutForm = ({ toggleSuccess }) => {
 					type='text'
 					label='Address'
 					value={inputs.address}
-					placeholder='5555 Example Avenue'
 					required
 					handleChange={handleChange}
 				/>
@@ -83,7 +79,6 @@ const CheckoutForm = ({ toggleSuccess }) => {
 					type='number'
 					label='ZIP Code'
 					value={inputs.zip}
-					placeholder='10001'
 					required
 					handleChange={handleChange}
 				/>
@@ -92,29 +87,17 @@ const CheckoutForm = ({ toggleSuccess }) => {
 					type='text'
 					label='City'
 					value={inputs.city}
-					placeholder='New York'
 					required
 					handleChange={handleChange}
 				/>
 				<FormInput
-					name='country'
+					name='state'
 					type='text'
-					label='Country'
-					value={inputs.country}
-					placeholder='United States'
+					label='State'
+					value={inputs.state}
 					required
 					handleChange={handleChange}
 				/>
-			</div>
-
-			<div className='form-group'>
-				<h3 className='form-group-title'>PAYMENT DETAILS</h3>
-
-				<p className='tagline'>
-					'Cash on Delivery' enables you to pay in cash when our delivery
-					courier arrives at your residence. Just make sure your address is
-					correct so that your order will not be cancelled.
-				</p>
 			</div>
 		</form>
 	);
