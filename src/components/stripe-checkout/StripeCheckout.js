@@ -58,11 +58,8 @@ const CheckoutForm = () => {
 				'/.netlify/functions/create-payment-intent',
 				JSON.stringify({ cart, grandTotal })
 			);
-			console.log(data);
 			setClientSecret(data.clientSecret);
-		} catch (error) {
-			console.log(error.response);
-		}
+		} catch (error) {}
 	};
 
 	useEffect(() => {
